@@ -1,55 +1,31 @@
 package com.example.exampractice
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        //Pattern 2 = variables
-        val lives = 3
-        var score = 0
-        score = 10
+         val nameEditText = findViewById<EditText>(R.id.nameEditText)
+         val resultTextView = findViewById<TextView>(R.id.resultTextView)
+         val submitButton = findViewById<Button>(R.id.submitButton)
 
-        var age: Int = 20
-        var name: String = "Jesse"
-
-
-
-        textView.text = "Hello $name, your score is $score
-        textView.text = "Double your score" ${score * 2}"
-        textView.text = "Next question: ${currentIndex + 1} of ${questions.count()}"
-
-        //grab a TextView
-        val myTextView = findViewById<TextView>(R.id.myTextView)
-
-        //grab a button
-        val myButton = findViewById<Button>(R.id.myButton)
-
-        //grab an editText
-        val myEditText = findViewById<EditText>(R.id.myEditText)
-
-        //Button Listener
-        myButton.setOnClickListener {
-            //everything that runs when button is clicked
-            myTextView.Text = "Button was clicked"
-        }
-        //get text as a string
-        val userInput = myEditText.text.toString()
-
-        //get text as an Int (when user enters a number)
-        val userNumber = myEditText.text.toString().toInt()
-
-
-
-
-
+         submitButton.setOnClickListener{
+           val name = nameEditText.text.toString()
+           resultTextView.text = "Hello $name, welcome to the app"
+         }
+        
 
 
 
