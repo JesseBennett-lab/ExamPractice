@@ -2,6 +2,7 @@ package com.example.exampractice
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -17,17 +18,10 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-         val nameEditText = findViewById<EditText>(R.id.nameEditText)
-         val resultTextView = findViewById<TextView>(R.id.resultTextView)
-         val submitButton = findViewById<Button>(R.id.submitButton)
-
-         submitButton.setOnClickListener{
-           val name = nameEditText.text.toString()
-           resultTextView.text = "Hello $name, welcome to the app"
-         }
-        
-
-
+        val fruits = arrayOf("Apple", "Banana", "Orange", "Mango")
+        for (fruit in fruits) {
+            Log.v("Fruits", "Fruit: $fruit")
+        }
 
 
 
